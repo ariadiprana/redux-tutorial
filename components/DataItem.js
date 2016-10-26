@@ -10,9 +10,13 @@ class DataItem extends Component{
   }
 
   render(){
-    const {data} = this.props
+    const {data, deleteData} = this.props
+    const liStyle = {
+      'color' : '#ffffff',
+      'backgroundColor' : '#000000'
+    }
     return(
-      <li>{data.name} - {data.phone} </li>
+      <li style={liStyle}>{data.name} - {data.phone} <button type="button" onClick={()=>deleteData(data.id)}>delete</button> </li>
     )
   }
 }
@@ -20,6 +24,7 @@ class DataItem extends Component{
 
 DataItem.propTypes = {
   data: PropTypes.object.isRequired,
+  deleteData: PropTypes.func.isRequired
 }
 
 export default DataItem

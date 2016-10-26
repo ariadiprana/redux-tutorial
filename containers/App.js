@@ -2,6 +2,7 @@ import React, {Component, PropTypes} from 'react'
 import {bindActionCreators} from 'redux'
 import {connect} from 'react-redux'
 import ListItem from '../components/ListItem'
+import AppTextInput from '../components/AppTextInput'
 import * as AppActions from '../actions'
 
 class App extends Component{
@@ -9,8 +10,11 @@ class App extends Component{
       const {data,actions} = this.props
       return(
         <div>
+          <h1>React Hactiv8</h1>
+          <AppTextInput name="" phone="" onSave={actions.addData}/>
           <ListItem data={data} actions={actions} />
         </div>
+
       )
   }
 }
