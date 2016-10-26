@@ -8,10 +8,10 @@ class ListItem extends Component{
 
 
 render(){
-  const {data} = this.props
+  const {data, actions} = this.props
   let nodeData = data.map(function(data){
     return(
-      <DataItem key={data.id} data={data} />
+      <DataItem key={data.id} data={data} {...actions}/>
     )
   })
   return(
