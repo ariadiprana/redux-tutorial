@@ -10,7 +10,9 @@ class ListItem extends Component{
 render(){
   const {data} = this.props
   let nodeData = data.map(function(data){
-    <DataItem key={data.id} data={data} />
+    return(
+      <DataItem key={data.id} data={data} />
+    )
   })
   return(
     <ul>
